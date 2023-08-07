@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Header } from "../components/Header";
 import { ContactForm } from "../components/ContactForm";
 import { Heading } from "../components/base/Heading";
+import { Card } from "../components/base/Card"; //Testing
 
 export default function Home() {
   return (
@@ -22,10 +23,11 @@ export default function Home() {
 
         <div className="h-[500px]"></div>
 
-        <ContactForm
-          headline={"CONTACT US"}
-          subline={"Let us help you grow"}
-        />
+        <Card></Card>
+
+        <div className="h-[500px]"></div>
+
+        <ContactForm headline={"CONTACT US"} subline={"Let us help you grow"} />
       </main>
     </div>
   );

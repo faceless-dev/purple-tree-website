@@ -4,17 +4,15 @@ import { Input } from "./base/Input";
 import { Textarea } from "./base/TextArea";
 import { HEADING_VARIANTS, Heading } from "./base/Heading";
 
-export interface ContactFormProps extends React.FormHTMLAttributes<HTMLFormElement> {
+export interface ContactFormProps
+  extends React.FormHTMLAttributes<HTMLFormElement> {
   headline: string;
   subline: string;
 }
 
 export const ContactForm = ({ headline, subline }: ContactFormProps) => {
   return (
-    <form
-      action={submitContactForm}
-      className="font-base"
-    >
+    <form action={submitContactForm} className="font-base">
       <div className="flex flex-col gap-2">
         <Heading>{headline}</Heading>
         <Heading variant={HEADING_VARIANTS.H2}>{subline}</Heading>
