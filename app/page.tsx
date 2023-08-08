@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Header } from "../components/Header";
 import { ContactForm } from "../components/ContactForm";
 import { Heading } from "../components/base/Heading";
-import { Card } from "../components/base/Card"; //Testing
+import { Cards } from "../components/Cards";
 
 export default function Home() {
   return (
@@ -23,7 +23,10 @@ export default function Home() {
 
         <div className="h-[500px]"></div>
 
-        <Card></Card>
+        <Cards
+          headline={"OUR SERVICES"}
+          subline={"Here’s how we can help you grow."}
+        ></Cards>
 
         <div className="h-[500px]"></div>
 

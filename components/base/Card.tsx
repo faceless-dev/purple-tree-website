@@ -8,7 +8,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   imagepath: string;
 }
 
-export const Card = ({ id, label, text, slabel, imagepath }: CardProps) => {
+export const Card = ({ label, text, slabel, imagepath }: CardProps) => {
   return (
     <div className="w-[22.375rem] h-[28.438rem] border-purple shadow-card rounded-[9px]">
       <div className="flex max-w-full justify-between pt-10 px-10">
@@ -21,11 +21,9 @@ export const Card = ({ id, label, text, slabel, imagepath }: CardProps) => {
       <label className="text-white flex mt-11 ml-10 text-2xl tracking-[0.15em]">
         {label}
       </label>
-      <p className="text-white flex ml-12 mr-10 text-sm font-light tracking-[0.131em] leading-[1.969rem]">
+      <p className="text-white flex ml-12 mr-10 text-sm font-light tracking-widest leading-8">
         {text}
       </p>
     </div>
   );
 };
-
-/** < */
