@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { BUTTON_VARIANTS, ButtonCTA } from "./base/Button";
+import { BUTTON_VARIANTS, ButtonCTA, ButtonProps } from "./base/Button";
 
 export const Header = () => {
   return (

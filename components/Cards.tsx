@@ -9,7 +9,7 @@ export interface CardsProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Cards = ({ headline, subline }: CardsProps) => {
   return (
-    <div className="flex flex-col space-y-24">
+    <div className="flex flex-col space-y-24 mt-24">
       <div className="flex flex-col space-y-10">
         <Heading>{headline}</Heading>
         <Heading variant={HEADING_VARIANTS.H2}>{subline}</Heading>
