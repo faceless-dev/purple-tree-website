@@ -8,7 +8,7 @@ import { Desc } from "../components/Desc";
 export default function Home() {
   return (
     <div>
-      <header className="max-h-5 bg-black w-full font-base">
+      <header className="bg-black w-full font-base">
         <Header />
       </header>
       <main className="min-w-full min-h-screen items-center flex flex-col bg-black p-12 font-base w-full">
@@ -33,7 +33,10 @@ export default function Home() {
 
         <div className="h-[300px]"></div>
 
-        <ContactForm headline={"CONTACT US"} subline={"Let us help you grow"} />
+        <ContactForm
+          headline={"CONTACT US"}
+          subline={"Let us help you grow"}
+        />
       </main>
     </div>
   );
