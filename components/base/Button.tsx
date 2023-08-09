@@ -1,30 +1,22 @@
-// "use client"; TRY TO MAKE THIS COMPONENT CLIENT SIDE BUT GET ERROR WHEN CLIENT RENDERED
+"use client";
+
 import classNames from "classnames";
 import React from "react";
+import { BUTTON_VARIANTS } from "../../utils/enums";
+import { ButtonProps } from "../../utils/interfaces";
 
-export enum BUTTON_VARIANTS {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-}
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: BUTTON_VARIANTS;
-}
-
-export const ButtonCTA = ({
-  onClick, //FILLER, SHOULD BE SCROLL FUNCTION
+const ButtonCTA = ({
   variant = BUTTON_VARIANTS.PRIMARY,
   children,
   ...rest
 }: ButtonProps) => {
   const scrollDown = () => {
-    //IDK HOW TO MAKE THIS FUNCTION WORK WITH THE BUTTON
     window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
   };
+
   return (
     <button
-      onClick={onClick}
+      onClick={scrollDown}
       className={classNames(
         "rounded-md px-6 text-center border border-purple text-md tracking-[0.15em] transition-colors duration-200 h-fit py-2",
         variant === BUTTON_VARIANTS.PRIMARY &&
@@ -38,3 +30,5 @@ export const ButtonCTA = ({
     </button>
   );
 };
+
+export default ButtonCTA;

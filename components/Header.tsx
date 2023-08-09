@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { BUTTON_VARIANTS, ButtonCTA, ButtonProps } from "./base/Button";
+import ButtonCTA from "./base/Button";
+import { BUTTON_VARIANTS } from "../utils/enums";
 
 export const Header = () => {
   return (
@@ -11,6 +12,7 @@ export const Header = () => {
         height={65}
         alt="Purple Tree"
       ></Image>
+
       <ButtonCTA variant={BUTTON_VARIANTS.SECONDARY}>contact us</ButtonCTA>
     </div>
   );
