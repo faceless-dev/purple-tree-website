@@ -27,7 +27,7 @@ export const Heading = ({
 
   return (
     <h1
-      className="uppercase font-bold tracking-[0.3em] text-purple text-5xl text-center"
+      className="uppercase font-bold tracking-[0.3em] md:text-5xl text-purple text-center text-2xl"
       {...rest}
     >
       {children}

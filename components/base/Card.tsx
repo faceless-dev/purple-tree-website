@@ -3,25 +3,25 @@ import Image from "next/image";
 
 export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   text: string;
-  label: string;
-  slabel: string;
-  imagepath: string;
+  cardName: string;
+  cardTag: string;
+  imagePath: string;
 }
 
-export const Card = ({ label, text, slabel, imagepath }: CardProps) => {
+export const Card = ({ cardName, text, cardTag, imagePath }: CardProps) => {
   return (
-    <div className="w-[22.375rem] h-[28.438rem] border-purple shadow-card rounded-[9px]">
+    <div className="sm:w-[22rem] h-[20rem] border-purple shadow-card rounded-lg">
       <div className="flex max-w-full justify-between pt-10 px-10">
-        <Image className="" src={imagepath} width={60} height={60} alt="" />
+        <Image src={imagePath} width={60} height={60} alt="" />
 
-        <div className="min-w-[6.25rem] min-h-[2rem] flex justify-center w-fit h-fit self-center bg-[#FFF] rounded-[37px]">
-          <label className="self-center block text-black ">{slabel}</label>
+        <div className="min-w-[6.25rem] min-h-[2rem] flex justify-center w-fit h-fit self-center bg-white rounded-[37px]">
+          <label className="self-center block text-black ">{cardTag}</label>
         </div>
       </div>
-      <label className="text-white flex mt-11 ml-10 text-2xl tracking-[0.15em]">
-        {label}
+      <label className="text-white flex mt-11 ml-10 lg:text-2xl sm:text-base  tracking-[0.15em]">
+        {cardName}
       </label>
-      <p className="text-white flex ml-12 mr-10 text-sm font-light tracking-widest leading-8">
+      <p className="text-white flex lg:ml-12 lg:mr-10  lg:text-sm md:text-sm md:mx-12 sm:text-xs sm:mx-2 font-light tracking-widest leading-8">
         {text}
       </p>
     </div>

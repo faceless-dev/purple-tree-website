@@ -7,12 +7,12 @@ import { Desc } from "../components/Desc";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-black">
       <header className="max-h-5 bg-black w-full font-base">
         <Header />
       </header>
-      <main className="min-w-full min-h-screen items-center flex flex-col bg-black p-12 font-base w-full">
-        <div className="p-2 flex items-center flex-col gap-8">
+      <main className="items-center flex flex-col bg-black p-12 font-base mt-24">
+        <div className="p-2 max-w-[150px] md:max-w-[250px] flex items-center flex-col gap-8 ">
           <Image
             src="/assets/logo.svg"
             alt="Purple Tree"
@@ -24,17 +24,14 @@ export default function Home() {
 
         <Desc />
 
-        <div className="h-[150px]"></div>
-
         <Cards
-          headline={"OUR SERVICES"}
+          headline={"our services"}
           subline={"Here’s how we can help you grow."}
         />
 
-        <div className="h-[300px]"></div>
-
-        <ContactForm headline={"CONTACT US"} subline={"Let us help you grow"} />
+        <ContactForm headline={"contact us"} subline={"Let us help you grow"} />
       </main>
     </div>
   );
 }
+//<main className="min-w-full min-h-screen items-center flex flex-col bg-black p-12 font-base w-full mt-24">
