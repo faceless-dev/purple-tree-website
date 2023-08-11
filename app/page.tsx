@@ -4,6 +4,8 @@ import { ContactForm } from "../components/ContactForm";
 import { Heading } from "../components/base/Heading";
 import { Cards } from "../components/Cards";
 import { Desc } from "../components/Desc";
+import ButtonCTA from "../components/base/Button";
+import { BUTTON_VARIANTS } from "../utils/enums";
 
 export default function Home() {
   return (
@@ -20,6 +22,9 @@ export default function Home() {
             height={250}
           ></Image>
           <Heading>purple tree</Heading>
+        </div>
+        <div className="self-center md:hidden pt-10">
+          <ButtonCTA variant={BUTTON_VARIANTS.MOBILE}>contact us</ButtonCTA>
         </div>
 
         <Desc />

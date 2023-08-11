@@ -18,11 +18,13 @@ const ButtonCTA = ({
     <button
       onClick={scrollDown}
       className={classNames(
-        "rounded-md px-6 text-center border border-purple text-md tracking-[0.15em] transition-colors duration-200 h-fit py-2",
+        "rounded-md px-6 text-center md:border  border-purple text-md tracking-[0.15em] transition-colors duration-200 h-fit py-2",
         variant === BUTTON_VARIANTS.PRIMARY &&
           "text-white bg-purple hover:bg-transparent",
         variant === BUTTON_VARIANTS.SECONDARY &&
-          "text-purple bg-transparent hover:bg-purple hover:text-white"
+          "text-purple bg-transparent hover:bg-purple hover:text-white",
+        variant === BUTTON_VARIANTS.MOBILE &&
+          "text-purple bg-transparent text-2xl"
       )}
       {...rest}
     >

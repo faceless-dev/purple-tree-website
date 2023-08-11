@@ -5,7 +5,7 @@ import { HEADING_VARIANTS, Heading } from "./base/Heading";
 
 export const Desc = () => {
   return (
-    <div className="flex mt-6 md:mt-36 lg:mt-40 flex-col mx-3 md:mx-9 lg:mx-80 space-y-3 md:space-y-4 lg:space-y-7">
+    <div className="flex mt-36 md:mt-36 lg:mt-40 flex-col mx-3 md:mx-9 lg:mx-80 space-y-3 md:space-y-4 lg:space-y-7">
       <label className="text-white text-lg md:text-3xl lg:text-4xl tracking-widest md:tracking-widest self-center">
         Who are we?
       </label>
