@@ -10,36 +10,39 @@ export interface CardsProps extends React.HTMLAttributes<HTMLDivElement> {
 export const Cards = ({ headline, subline }: CardsProps) => {
   return (
     <div className="flex flex-col  space-y-24 mt-44 ">
-      <div className="flex flex-col ">
+      <div className="flex flex-col gap-4">
         <Heading>{headline}</Heading>
-        <Heading variant={HEADING_VARIANTS.H2}>{subline}</Heading>
+        <div className="">
+          <Heading variant={HEADING_VARIANTS.H2}>{subline}</Heading>
+        </div>
       </div>
+      <div className="flex flex-col md:flex-row gap-10">
+        <Card
+          cardName={"Design"}
+          cardTag={"create"}
+          text={
+            "Lorem ipsum dolor sit amet sijfds ijsdbfdsfj isdjbfjfb sjdbjs us sudhsu udbdu bsusbdjs usbd su busbd usbd sbjbd ds sdjbsdj sjbd jsb sdjb"
+          }
+          imagePath={"/assets/CardDesign.svg"}
+        />
+
+        <Card
+          cardName={"Code"}
+          cardTag={"coding"}
+          text={"Lorem ipsum dolor sit amet "}
+          imagePath={"/assets/CardCode.svg"}
+        />
+
+        <Card
+          cardName={"Website Templates"}
+          cardTag={"easy"}
+          text={"Lorem ipsum dolor sit amet"}
+          imagePath={"/assets/CardWebsite.svg"}
+        />
+      </div>
+      ;
     </div>
   );
 };
 
 //Auskommentiert
-<div className="flex md:flex-col md:justify-center md:space-y-20 sm:flex-col sm:justify-center sm:space-y-20 lg:flex-row lg:items-stretch lg:space-x-20">
-  <Card
-    cardName={"Design"}
-    cardTag={"create"}
-    text={
-      "Lorem ipsum dolor sit amet irmod tempor invidunt ut labore et dolore magna aliquyam erat, sed dia voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stetclita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit"
-    }
-    imagePath={"/assets/CardDesign.svg"}
-  />
-
-  <Card
-    cardName={"Code"}
-    cardTag={"coding"}
-    text={"Lorem ipsum dolor sit amet "}
-    imagePath={"/assets/CardCode.svg"}
-  />
-
-  <Card
-    cardName={"Website Templates"}
-    cardTag={"easy"}
-    text={"Lorem ipsum dolor sit amet"}
-    imagePath={"/assets/CardWebsite.svg"}
-  />
-</div>;

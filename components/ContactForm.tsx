@@ -12,7 +12,7 @@ export interface ContactFormProps {
 export const ContactForm = ({ headline, subline }: ContactFormProps) => {
   return (
     <form action={submitContactForm} className="font-base">
-      <div className="flex flex-col gap-2 mt-80">
+      <div className="flex flex-col gap-2 mt-40">
         <Heading>{headline}</Heading>
         <Heading variant={HEADING_VARIANTS.H2}>{subline}</Heading>
       </div>

@@ -18,7 +18,7 @@ export const Heading = ({
   if (variant === HEADING_VARIANTS.H2)
     return (
       <h2
-        className="font-normal text-white tracking-[0.15em] text-2xl text-center"
+        className="font-normal text-white tracking-[0.15em] md:text-2xl text-center"
         {...rest}
       >
         {children}
