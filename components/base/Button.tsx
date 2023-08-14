@@ -18,7 +18,7 @@ const ButtonCTA = ({
     <button
       onClick={scrollDown}
       className={classNames(
-        "rounded-md px-6 text-center md:border  border-purple text-md tracking-[0.15em] transition-colors duration-200 h-fit py-2",
+        "rounded-md px-6 text-center md:border  border-purple text-md tracking-[0.15em] leading-3 transition-colors duration-200 h-fit py-4",
         variant === BUTTON_VARIANTS.PRIMARY &&
           "text-white bg-purple hover:bg-transparent",
         variant === BUTTON_VARIANTS.SECONDARY &&
