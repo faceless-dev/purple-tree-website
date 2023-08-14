@@ -10,7 +10,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Card = ({ cardName, text, cardTag, imagePath }: CardProps) => {
   return (
-    <div className="w-[18rem] h-[25rem] lg:w-auto lg:h-[28rem] border-purple shadow-card rounded-lg">
+    <div className="w-[18rem] h-[25rem] lg:w-auto lg:min-w-[20rem] lg:h-[28rem] border-purple shadow-card rounded-lg">
       <div className="flex max-w-full justify-between pt-10 px-10">
         <Image src={imagePath} width={60} height={60} alt="" />
 
