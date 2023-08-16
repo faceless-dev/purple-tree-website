@@ -35,6 +35,9 @@ export default function Home() {
         />
 
         <ContactForm headline={"contact us"} subline={"Let us help you grow"} />
+        <div className="self-center mt-10">
+          <ButtonCTA variant={BUTTON_VARIANTS.SECONDARY}>submit</ButtonCTA>
+        </div>
       </main>
     </div>
   );
