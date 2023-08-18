@@ -17,7 +17,7 @@ export const Cards = ({ headline, subline }: CardsProps) => {
           <Heading variant={HEADING_VARIANTS.H2}>{subline}</Heading>
         </div>
       </div>
-      <div className="flex flex-col self-center lg:flex-row gap-10">
+      <div className="flex flex-col  self-center lg:flex-row gap-20">
         <Card
           cardName={"Design"}
           cardTag={"create"}

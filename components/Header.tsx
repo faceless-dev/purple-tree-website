@@ -5,7 +5,7 @@ import { BUTTON_VARIANTS } from "../utils/enums";
 
 export const Header = () => {
   return (
-    <div className="flex justify-between  py-2 px-5 border-b-2 border-purple bg-black ">
+    <div className="flex justify-between  py-2 px-5 md:px-20 border-b-2 border-purple bg-black ">
       <div className="hidden md:block">
         <Image
           src="/assets/logo_header.svg"

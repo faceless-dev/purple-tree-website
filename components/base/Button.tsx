@@ -24,7 +24,7 @@ const ButtonCTA = ({
         variant === BUTTON_VARIANTS.SECONDARY &&
           "text-purple bg-transparent hover:bg-purple hover:text-white",
         variant === BUTTON_VARIANTS.MOBILE &&
-          "text-purple bg-transparent text-2xl"
+          "text-purple bg-transparent border-2 text-2xl border-purple"
       )}
       {...rest}
     >
