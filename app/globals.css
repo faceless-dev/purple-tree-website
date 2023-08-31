@@ -7,3 +7,15 @@
   src: url("../public/assets/fonts/GorgaGrotesque-Regular.otf")
     format("opentype");
 }
+
+@font-face {
+  font-family: "Gorga-Light";
+  src: url("../public/assets/fonts/GorgaGrotesque-Light.otf")
+    format("opentype");
+}
+
+@font-face {
+  font-family: "Gorga-Bold";
+  src: url("../public/assets/fonts/GorgaGrotesque-Bold.otf")
+    format("opentype");
+}
