@@ -54,7 +54,7 @@ export const Branches = ({ headline, subline }: BranchProbs) => {
           </div>
         </div>
         <div className="flex flex-row md:mt-[-8rem] pl-10 justify-end">
-          <div className="flex-col text-end lg:mr-[2rem] md:space-y-3">
+          <div className="flex-col text-end lg:mr-[2rem] mr-2 md:space-y-3">
             <label className="text-purple md:text-4xl text-xl">
               Logo Design
             </label>
