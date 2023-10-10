@@ -3,6 +3,8 @@ import submitContactForm from "../utils/submitContactForm";
 import { Input } from "./base/Input";
 import { Textarea } from "./base/TextArea";
 import { HEADING_VARIANTS, Heading } from "./base/Heading";
+import { BUTTON_VARIANTS } from "../utils/enums";
+import Button from "./base/Button";
 
 export interface ContactFormProps {
   headline: string;
@@ -11,7 +13,10 @@ export interface ContactFormProps {
 
 export const ContactForm = ({ headline, subline }: ContactFormProps) => {
   return (
-    <form action={submitContactForm} className="font-base">
+    <form
+      action={submitContactForm}
+      className="font-base"
+    >
       <div className="flex flex-col gap-2 mt-40">
         <Heading>{headline}</Heading>
         <Heading variant={HEADING_VARIANTS.H2}>{subline}</Heading>
@@ -20,21 +25,33 @@ export const ContactForm = ({ headline, subline }: ContactFormProps) => {
       <div className="mt-12 flex flex-col gap-6">
         <Input
           label={"Name"}
+          name="name"
           id={"contact_name"}
           placeholder="Max Mustermann"
           type="text"
         />
         <Input
           label={"Email"}
+          name="email"
           id={"contact_email"}
           placeholder="info@maxmustermann.com"
           type="email"
         />
         <Textarea
           label={"Your message"}
+          name="message"
           id={"contact_message"}
           placeholder="Write your message here"
         />
+
+        <div className="self-center mt-10 mb-10">
+          <Button
+            variant={BUTTON_VARIANTS.PRIMARY}
+            type="submit"
+          >
+            submit
+          </Button>
+        </div>
       </div>
     </form>
   );
