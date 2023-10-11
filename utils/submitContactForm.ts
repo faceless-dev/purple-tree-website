@@ -2,33 +2,48 @@
 
 import { parseEnvValues } from "./parseEnvValues";
 
-const { NODE_ENV, ENABLE_DISCORD_MESSAGING, DISCORD_CUSTOMER_MESSAGE_WEBHOOK_ID, DISCORD_CUSTOMER_MESSAGE_WEBHOOK_TOKEN } = parseEnvValues(
+const {
+  NODE_ENV,
+  DISCORD_CUSTOMER_MESSAGE_WEBHOOK_ID,
+  DISCORD_CUSTOMER_MESSAGE_WEBHOOK_TOKEN,
+  DEV_DISCORD_CUSTOMER_MESSAGE_WEBHOOK_ID,
+  DEV_DISCORD_CUSTOMER_MESSAGE_WEBHOOK_TOKEN,
+} = parseEnvValues(
   "NODE_ENV",
   "ENABLE_DISCORD_MESSAGING",
+  "DISCORD_CUSTOMER_MESSAGE_WEBHOOK_ID",
   "DISCORD_CUSTOMER_MESSAGE_WEBHOOK_TOKEN",
-  "DISCORD_CUSTOMER_MESSAGE_WEBHOOK_ID"
+  "DEV_DISCORD_CUSTOMER_MESSAGE_WEBHOOK_ID",
+  "DEV_DISCORD_CUSTOMER_MESSAGE_WEBHOOK_TOKEN"
 );
 
-export default async function submitContactForm(formData: FormData) {
-  console.log("Name", formData.get("name"), "Email", formData.get("email"), "Message", formData.get("message"));
+const getWebHookUrl = () => {
+  const baseUrl = "https://discord.com/api/webhooks";
 
-  if (NODE_ENV === "production" || ENABLE_DISCORD_MESSAGING) {
-    const res = await fetch(
-      `https://discord.com/api/webhooks/${DISCORD_CUSTOMER_MESSAGE_WEBHOOK_ID}/${DISCORD_CUSTOMER_MESSAGE_WEBHOOK_TOKEN}`,
-      {
-        body: JSON.stringify({
-          content: formatMessage(formData),
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-      }
-    ).catch(console.error);
+  if (NODE_ENV === "production") {
+    return `${baseUrl}/${DISCORD_CUSTOMER_MESSAGE_WEBHOOK_ID}/${DISCORD_CUSTOMER_MESSAGE_WEBHOOK_TOKEN}`;
+  }
 
-    console.log("RAW", res);
+  return `${baseUrl}/${DEV_DISCORD_CUSTOMER_MESSAGE_WEBHOOK_ID}/${DEV_DISCORD_CUSTOMER_MESSAGE_WEBHOOK_TOKEN}`;
+};
 
-    console.log("JSON", res?.json());
+export default async function submitContactForm(formData: FormData): Promise<{ success: boolean }> {
+  try {
+    await fetch(getWebHookUrl(), {
+      body: JSON.stringify({
+        content: formatMessage(formData),
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    });
+
+    return { success: true };
+  } catch (err) {
+    console.error(err);
+
+    return { success: false };
   }
 }
 
