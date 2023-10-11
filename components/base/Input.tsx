@@ -5,7 +5,7 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   id: string;
 }
 
-export const Input = ({ id, label, name, placeholder, type, ...rest }: InputProps) => {
+export const Input = ({ id, label, name, placeholder, type, required = false, ...rest }: InputProps) => {
   return (
     <div
       className="flex flex-col gap-2"
@@ -18,6 +18,7 @@ export const Input = ({ id, label, name, placeholder, type, ...rest }: InputProp
         {label}
       </label>
       <input
+        required={required}
         name={name}
         id={id}
         placeholder={placeholder}

@@ -5,7 +5,7 @@ export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextArea
   id: string;
 }
 
-export const Textarea = ({ id, label, placeholder, name, ...rest }: TextareaProps) => {
+export const Textarea = ({ id, label, placeholder, name, required = false, ...rest }: TextareaProps) => {
   return (
     <div className="flex flex-col gap-2">
       <label
@@ -16,6 +16,7 @@ export const Textarea = ({ id, label, placeholder, name, ...rest }: TextareaProp
       </label>
       <textarea
         id={id}
+        required={required}
         name={name}
         placeholder={placeholder}
         rows={4}

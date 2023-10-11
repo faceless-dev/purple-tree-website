@@ -48,6 +48,7 @@ export const ContactForm = ({ headline, subline }: ContactFormProps) => {
 
         <div className="mt-12 flex flex-col gap-6">
           <Input
+            required
             label={"Name"}
             name="name"
             id={"contact_name"}
@@ -55,6 +56,7 @@ export const ContactForm = ({ headline, subline }: ContactFormProps) => {
             type="text"
           />
           <Input
+            required
             label={"Email"}
             name="email"
             id={"contact_email"}
@@ -62,6 +64,7 @@ export const ContactForm = ({ headline, subline }: ContactFormProps) => {
             type="email"
           />
           <Textarea
+            required
             label={"Your message"}
             name="message"
             id={"contact_message"}
