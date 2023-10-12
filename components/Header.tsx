@@ -1,7 +1,6 @@
-import React from "react";
 import Image from "next/image";
-import ButtonCTA from "./base/Button";
 import { BUTTON_VARIANTS } from "../utils/enums";
+import Button from "./base/Button";
 
 export const Header = () => {
   return (
@@ -24,7 +23,12 @@ export const Header = () => {
       </div>
 
       <div className="self-center hidden md:block">
-        <ButtonCTA variant={BUTTON_VARIANTS.SECONDARY}>contact us</ButtonCTA>
+        <Button
+          scrollDownOnClick
+          variant={BUTTON_VARIANTS.SECONDARY}
+        >
+          contact us
+        </Button>
       </div>
     </div>
   );
