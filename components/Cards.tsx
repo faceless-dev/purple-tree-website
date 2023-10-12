@@ -9,7 +9,7 @@ export interface CardsProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Cards = ({ headline, subline }: CardsProps) => {
   return (
-    //Wenn man von 1024px runter scaled gehen die Karten kurz vor md aus dem Bild
+    //TODO: Wenn man von 1024px runter scaled gehen die Karten kurz vor md aus dem Bild
     <div className="flex flex-col space-y-24 mt-44">
       <div className="flex flex-col gap-4">
         <Heading>{headline}</Heading>

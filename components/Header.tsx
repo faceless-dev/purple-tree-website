@@ -4,7 +4,7 @@ import Button from "./base/Button";
 
 export const Header = () => {
   return (
-    <div className="flex justify-between  py-2 px-5 md:px-20 border-b-2 border-purple bg-black ">
+    <header className="flex bg-black w-full font-base justify-between py-2 px-5 md:px-20 border-b-2 border-purple">
       <div className="hidden md:block">
         <Image
           src="/assets/logo_header.svg"
@@ -30,6 +30,6 @@ export const Header = () => {
           contact us
         </Button>
       </div>
-    </div>
+    </header>
   );
 };
