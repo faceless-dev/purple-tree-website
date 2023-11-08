@@ -19,23 +19,29 @@ export const Cards = ({ headline, subline }: CardsProps) => {
       </div>
       <div className="flex flex-col  self-center lg:flex-row gap-20">
         <Card
-          cardName={"Design"}
+          cardName={"Design Prowess"}
           cardTag={"create"}
-          text={"Lorem ipsum dolor sit amet"}
+          text={
+            "With a keen eye for design trends and user behavior, our team creates visually engaging websites that tell your brand's story."
+          }
           imagePath={"/assets/CardDesign.svg"}
         />
 
         <Card
-          cardName={"Code"}
-          cardTag={"coding"}
-          text={"Lorem ipsum dolor sit amet "}
+          cardName={"Technical Mastery"}
+          cardTag={"code"}
+          text={
+            "Our coders are fluent in the latest programming languages, ensuring your website is built on a solid, future-proof foundation."
+          }
           imagePath={"/assets/CardCode.svg"}
         />
 
         <Card
-          cardName={"Website Templates"}
-          cardTag={"easy"}
-          text={"Lorem ipsum dolor sit amet"}
+          cardName={"Custom Templates"}
+          cardTag={"customize"}
+          text={
+            "Expertise in tailoring website templates to fit your needs means you get a unique website quickly and cost-effectively."
+          }
           imagePath={"/assets/CardWebsite.svg"}
         />
       </div>
@@ -43,5 +49,3 @@ export const Cards = ({ headline, subline }: CardsProps) => {
     </div>
   );
 };
-
-//Auskommentiert

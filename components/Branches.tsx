@@ -7,6 +7,7 @@ export interface BranchProbs extends React.HTMLAttributes<HTMLDivElement> {
   subline: string;
 }
 
+//TODO BILD von Branch 2 gehört gewechselt weil Das Bild größer als das SVG ist
 export const Branches = ({ headline, subline }: BranchProbs) => {
   return (
     <div className="w-full">
@@ -24,8 +25,10 @@ export const Branches = ({ headline, subline }: BranchProbs) => {
             <label className="text-purple md:text-4xl text-xl">
               Logo Design
             </label>
-            <p className=" text-white md:text-2xl text-xs">
-              We create a Custom Logo that fits your company.
+            <p className=" text-white pl-96 md:text-2xl text-xs">
+              Unveil a new face for your business with our custom logo design
+              service. Tailored to embody your brand's ethos, our logos are
+              crafted to make a lasting impression.
             </p>
           </div>
           <Image
@@ -44,22 +47,25 @@ export const Branches = ({ headline, subline }: BranchProbs) => {
             height={50}
             alt="Purple Tree"
           ></Image>
-          <div className="flex-col text-start md:ml-[-4rem] ml-2 pr-10 md:space-y-3">
+          <div className="flex-col text-start md:ml-[-2rem]  md:space-y-3">
             <label className="text-purple md:text-4xl text-xl">
-              Logo Design
+              Web Design
             </label>
-            <p className=" text-white md:text-2xl text-xs">
-              We create a Custom Logo that fits your company.
+            <p className=" text-white md:text-2xl pr-96 text-xs">
+              Step into the spotlight with bespoke web designs that blend
+              functionality with aesthetics, optimized for engagement and
+              conversion.
             </p>
           </div>
         </div>
         <div className="flex flex-row md:mt-[-8rem] pl-10 justify-end">
           <div className="flex-col text-end lg:mr-[2rem] mr-2 md:space-y-3">
             <label className="text-purple md:text-4xl text-xl">
-              Logo Design
+              Web App Development
             </label>
-            <p className=" text-white md:text-2xl text-xs">
-              We create a Custom Logo that fits your company.
+            <p className=" text-white md:text-2xl md:pl-96 text-xs">
+              Transform your ideas into reality with our custom web app
+              solutions, designed for performance and user experience.
             </p>
           </div>
           <Image
