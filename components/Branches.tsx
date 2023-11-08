@@ -27,7 +27,7 @@ export const Branches = ({ headline, subline }: BranchProbs) => {
             </label>
             <p className=" text-white pl-96 md:text-2xl text-xs">
               Unveil a new face for your business with our custom logo design
-              service. Tailored to embody your brand's ethos, our logos are
+              service. Tailored to embody your brand&apos;s ethos, our logos are
               crafted to make a lasting impression.
             </p>
           </div>
