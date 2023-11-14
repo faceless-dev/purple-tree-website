@@ -21,18 +21,18 @@ export const Branches = ({ headline, subline }: BranchProbs) => {
       </div>
       <div className="flex flex-col md:pt-80 pt-36">
         <div className="flex flex-row justify-end">
-          <div className="flex-col text-end lg:mr-[2rem] pl-10 mr-2 md:space-y-3">
+          <div className="flex-col text-right lg:mr-[2rem] md:w-[30%] w-[50%] mr-2 md:space-y-3">
             <label className="text-purple md:text-4xl text-xl">
               Logo Design
             </label>
-            <p className=" text-white pl-96 md:text-2xl text-xs">
+            <p className=" text-white md:text-2xl text-xs">
               Unveil a new face for your business with our custom logo design
               service. Tailored to embody your brand&apos;s ethos, our logos are
               crafted to make a lasting impression.
             </p>
           </div>
           <Image
-            className="lg:w-[25rem]"
+            className="md:w-[25rem]"
             src="/assets/Branch1.svg"
             width={150}
             height={65}
@@ -41,17 +41,17 @@ export const Branches = ({ headline, subline }: BranchProbs) => {
         </div>
         <div className="flex flex-row md:mt-[-6rem] object-fit justify-start">
           <Image
-            className="md:w-[28rem] md:h-[30rem]" //BROWSER DEV TOOLS -> RAHMEN MUSS GEFIXED WERDEN!
+            className="md:w-[15rem] md:h-[30rem]" //BROWSER DEV TOOLS -> RAHMEN MUSS GEFIXED WERDEN!
             src="/assets/Branch2.svg"
             width={90}
             height={50}
             alt="Purple Tree"
           ></Image>
-          <div className="flex-col text-start md:ml-[-2rem]  md:space-y-3">
+          <div className="flex-col md:w-[30%] w-[50%] text-start md:ml-8 ml-2 md:space-y-3">
             <label className="text-purple md:text-4xl text-xl">
               Web Design
             </label>
-            <p className=" text-white md:text-2xl pr-96 text-xs">
+            <p className=" text-white  md:text-2xl  text-xs">
               Step into the spotlight with bespoke web designs that blend
               functionality with aesthetics, optimized for engagement and
               conversion.
@@ -59,11 +59,11 @@ export const Branches = ({ headline, subline }: BranchProbs) => {
           </div>
         </div>
         <div className="flex flex-row md:mt-[-8rem] pl-10 justify-end">
-          <div className="flex-col text-end lg:mr-[2rem] mr-2 md:space-y-3">
+          <div className="flex-col text-end lg:mr-[2rem] md:w-[30%] mr-2 md:space-y-3">
             <label className="text-purple md:text-4xl text-xl">
               Web App Development
             </label>
-            <p className=" text-white md:text-2xl md:pl-96 text-xs">
+            <p className=" text-white md:text-2xl  text-xs">
               Transform your ideas into reality with our custom web app
               solutions, designed for performance and user experience.
             </p>

@@ -22,7 +22,7 @@ export const Cards = ({ headline, subline }: CardsProps) => {
           cardName={"Design Prowess"}
           cardTag={"create"}
           text={
-            "With a keen eye for design trends and user behavior, our team creates visually engaging websites that tell your brand's story."
+            "Our designs breathe life into your brand. Purple Tree's creative solutions capture the essence of your company, combining aesthetics with functionality. We ensure your first digital impression is striking and memorable, so your business stands out."
           }
           imagePath={"/assets/CardDesign.svg"}
         />
@@ -31,7 +31,7 @@ export const Cards = ({ headline, subline }: CardsProps) => {
           cardName={"Technical Mastery"}
           cardTag={"code"}
           text={
-            "Our coders are fluent in the latest programming languages, ensuring your website is built on a solid, future-proof foundation."
+            "Coding might seem like a foreign language, but to us, it's poetry. We transform complex code into seamless web experiences. Purple Tree's technical expertise means robust performance under the hood of your stylish new website, ensuring it runs smoothly for every visitor."
           }
           imagePath={"/assets/CardCode.svg"}
         />
@@ -40,7 +40,7 @@ export const Cards = ({ headline, subline }: CardsProps) => {
           cardName={"Custom Templates"}
           cardTag={"customize"}
           text={
-            "Expertise in tailoring website templates to fit your needs means you get a unique website quickly and cost-effectively."
+            "We believe in simplicity without compromising on quality. Our range of website templates offers a fast track to online presence for businesses and individuals alike. Choose a template, and we'll tailor it to suit your unique brand, giving you a custom feel without the custom price tag."
           }
           imagePath={"/assets/CardWebsite.svg"}
         />
