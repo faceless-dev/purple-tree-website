@@ -15,7 +15,7 @@ export const Card = ({ cardName, text, cardTag, imagePath }: CardProps) => {
         <Image src={imagePath} width={60} height={60} alt="" />
 
         <div className=" min-h-[2rem] px-5 flex justify-center w-fit h-fit self-center bg-white rounded-[37px]">
-          <label className="self-center block text-black leading-3 tracking-widest">
+          <label className=" self-center pt-1 block text-black leading-3 tracking-widest">
             {cardTag}
           </label>
         </div>
