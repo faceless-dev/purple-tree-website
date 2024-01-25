@@ -62,14 +62,14 @@ const ScrollZoomContainer = ({ children }: { children: React.ReactNode }) => {
       <div
         ref={headerRef}
         className="top-4 left-5 fixed opacity-0 z-50 p-1 bg-black bg-opacity-90 rounded-xl"
-      />
-
-      <Image
-        src="/assets/logo.header.svg"
-        width={150}
-        height={50}
-        alt="Purple Tree"
-      />
+      >
+        <Image
+          src="/assets/logo.header.svg"
+          width={150}
+          height={50}
+          alt="Purple Tree"
+        />
+      </div>
 
       <div
         ref={zoomRef}
