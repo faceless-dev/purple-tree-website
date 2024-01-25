@@ -1,8 +1,6 @@
 import classNames from "classnames";
 import Image from "next/image";
 import React from "react";
-import { ButtonVariants } from "../utils/enums";
-import Button from "./base/Button";
 
 const Hero = ({ imageRef }: { imageRef: React.RefObject<HTMLImageElement> }) => {
   return (

@@ -6,6 +6,9 @@ module.exports = {
       boxShadow: {
         card: "0 0px 11px 0px rgba(168, 46, 255, 0.7)",
       },
+      animation: {
+        "bounce-slow": "bounce 1.5s ease-in-out infinite",
+      },
       dropShadow: {
         header: "3px 3px 3px  rgba(168, 46, 255, 0.5)",
       },

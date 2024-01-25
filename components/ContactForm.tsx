@@ -74,7 +74,7 @@ export const ContactForm = ({ headline, subline }: ContactFormProps) => {
             placeholder="Hi, I would like to request a personal quote.."
           />
 
-          <div className="self-center mt-2 md:mt-10 mb-5">
+          <div className="self-center mt-2 md:mt-10 mb-5 md:mb-10">
             <Button type="submit">send</Button>
           </div>
         </div>
