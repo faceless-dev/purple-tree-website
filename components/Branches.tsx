@@ -70,7 +70,6 @@ export const Branches = ({}: BranchProbs) => {
             alt="Purple Tree"
           />
         </div>
-        H
       </div>
     </div>
   );

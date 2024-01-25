@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Purple Tree",
-  description: "Website",
+  description: "Creative digital agency",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
