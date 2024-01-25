@@ -8,22 +8,19 @@ import { WhoWeAre } from "../components/WhoWeAre";
 export default function Home() {
   return (
     <ScrollZoomContainer>
-      <main className="items-center flex flex-col bg-black font-base">
-        <Header />
+      <main className="items-center flex flex-col bg-transparent font-base">
         <WhoWeAre />
-        <Branches
-          headline={"our services"}
-          subline={"Here's how we can help you grow."}
-        ></Branches>
+
+        <Branches />
 
         <Cards
-          headline={"our skills"}
-          subline={"What we can do."}
+          headline={"what we offer"}
+          subline={"we are experts in our craft"}
         />
 
         <ContactForm
-          headline={"contact us"}
-          subline={"Let us help you grow"}
+          headline={"get in touch today"}
+          subline={"Lets grow your business together"}
         />
       </main>
     </ScrollZoomContainer>

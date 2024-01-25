@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BUTTON_VARIANTS } from "../utils/enums";
+import { ButtonVariants } from "../utils/enums";
 import Button from "./base/Button";
 
 export const Header = () => {
@@ -25,7 +25,7 @@ export const Header = () => {
       <div className="self-center hidden md:block">
         <Button
           scrollDownOnClick
-          variant={BUTTON_VARIANTS.SECONDARY}
+          variant={"SECONDARY"}
         >
           contact us
         </Button>

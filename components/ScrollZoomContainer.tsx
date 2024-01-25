@@ -3,29 +3,42 @@
 import classNames from "classnames";
 import { useEffect, useRef } from "react";
 import Hero from "./Hero";
+import Image from "next/image";
+
+const ZOOM_BREAKPOINT = 13; // Do not touch, not yet figured out how to refactor
+const ZOOM_SPEED = 100; // Do not touch, not yet figured out how to refactor
+
+const MAX_SIZE = ZOOM_BREAKPOINT * ZOOM_SPEED; // maximum size of hero image
+const HERO_OPACITY_SCALING = 300; // relative to scrollHeight, lower means hero image fades out faster
+const HEADER_OPACITY_SCALING = 700; // relative to scrollHeight, lower means header fades in faster
+const OFFSET_FACTOR = 0.8; // scales offset to main content
+const ZOOM_SPEED_FACTOR = 1.8; // decreases time until main content comes in view
 
 const ScrollZoomContainer = ({ children }: { children: React.ReactNode }) => {
   const zoomRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const afterZoomRef = useRef<HTMLDivElement>(null);
 
-  const ZOOM_BREAKPOINT = 13; // When it should stop zooming in
-  const ZOOM_SPEED = 100; // Lower is faster
-  const ABSOLUTE = ZOOM_BREAKPOINT * ZOOM_SPEED * 0.8; // Absolute position, when the Element reached maximum size
-  const HEIGHT = zoomRef.current?.clientHeight ?? 0;
+  const currentHeight = zoomRef.current?.clientHeight ?? 0;
 
   useEffect(() => {
     if (imageRef.current && zoomRef.current && afterZoomRef.current) {
       const anim = () => {
-        let scroll = window.scrollY;
+        let scroll = window.scrollY * ZOOM_SPEED_FACTOR;
         let temp = scroll / ZOOM_SPEED;
         let zoom = temp > 1 ? temp : 1;
 
-        if (imageRef.current && zoomRef.current && afterZoomRef.current) {
+        if (imageRef.current && zoomRef.current && afterZoomRef.current && headerRef.current) {
           if (zoom < ZOOM_BREAKPOINT) {
+            const opacity = Math.max(1 - scroll / HERO_OPACITY_SCALING, 0.05);
+
             imageRef.current.style.transform = `scale(${zoom})`;
             zoomRef.current.style.top = "0px";
             zoomRef.current.style.position = "fixed";
+
+            imageRef.current.style.opacity = opacity * 100 + "%";
+            headerRef.current.style.opacity = Math.min(scroll / HEADER_OPACITY_SCALING) * 100 + "%";
           }
         }
       };
@@ -37,7 +50,7 @@ const ScrollZoomContainer = ({ children }: { children: React.ReactNode }) => {
 
       document.addEventListener("scroll", () => window.requestAnimationFrame(anim));
 
-      return document.removeEventListener("scroll", anim);
+      return () => document.removeEventListener("scroll", anim);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -52,9 +65,21 @@ const ScrollZoomContainer = ({ children }: { children: React.ReactNode }) => {
       </div>
 
       <div
+        ref={headerRef}
+        className="top-4 left-5 fixed opacity-0 z-50 p-1 bg-black bg-opacity-90 rounded-xl"
+      >
+        <Image
+          src="/assets/logo.header.svg"
+          width={150}
+          height={50}
+          alt="Purple Tree"
+        />
+      </div>
+
+      <div
         ref={afterZoomRef}
-        style={{ top: ABSOLUTE + HEIGHT + "px" }}
-        className={classNames("absolute bg-black w-100 overflow-x-auto")}
+        style={{ top: (MAX_SIZE + currentHeight) * OFFSET_FACTOR + "px" }}
+        className={classNames("absolute w-100 overflow-x-auto")}
       >
         {children}
       </div>
