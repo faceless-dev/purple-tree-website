@@ -1,6 +1,6 @@
-import { BUTTON_VARIANTS } from "./enums";
+import { ButtonVariants } from "./enums";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: BUTTON_VARIANTS;
+  variant?: keyof typeof ButtonVariants;
   scrollDownOnClick?: boolean;
 }

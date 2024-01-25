@@ -1,10 +1,10 @@
 "use client";
 
 import { useCallback, useRef } from "react";
-import { BUTTON_VARIANTS } from "../utils/enums";
+import { ButtonVariants } from "../utils/enums";
 import submitContactForm from "../utils/submitContactForm";
 import Button from "./base/Button";
-import { HEADING_VARIANTS, Heading } from "./base/Heading";
+import { HeadingVariant, Heading } from "./base/Heading";
 import { Input } from "./base/Input";
 import { Textarea } from "./base/TextArea";
 import toast, { Toaster } from "react-hot-toast";
@@ -31,9 +31,15 @@ export const ContactForm = ({ headline, subline }: ContactFormProps) => {
   return (
     <>
       <Toaster position="top-right" />
+
+      <div className="flex flex-col gap-2 mt-40">
+        <Heading>{headline}</Heading>
+        <Heading variant={"H2"}>{subline}</Heading>
+      </div>
+
       <form
         ref={formRef}
-        className="font-base"
+        className="font-base w-full grid place-items-center"
         onSubmit={async (e) => {
           e.preventDefault();
           await submitForm(new FormData(e.target as HTMLFormElement));
@@ -41,43 +47,35 @@ export const ContactForm = ({ headline, subline }: ContactFormProps) => {
           formRef.current?.reset();
         }}
       >
-        <div className="flex flex-col gap-2 mt-40">
-          <Heading>{headline}</Heading>
-          <Heading variant={HEADING_VARIANTS.H2}>{subline}</Heading>
-        </div>
-
-        <div className="mt-12 flex flex-col gap-6">
+        <div className="flex flex-col gap-7 max-w-xs md:max-w-xl mt-12 w-full">
           <Input
             required
-            label={"Name"}
+            label={"How we should address you"}
             name="name"
             id={"contact_name"}
-            placeholder="Max Mustermann"
+            placeholder="John Doe"
             type="text"
           />
+
           <Input
             required
-            label={"Email"}
+            label={"Your digital inbox"}
             name="email"
             id={"contact_email"}
-            placeholder="info@maxmustermann.com"
+            placeholder="inbox@johndoe.com"
             type="email"
           />
+
           <Textarea
             required
-            label={"Your message"}
+            label={"What would you like to tell us?"}
             name="message"
             id={"contact_message"}
-            placeholder="Write your message here"
+            placeholder="Hi, I would like to request a personal quote.."
           />
 
-          <div className="self-center mt-10 mb-10">
-            <Button
-              variant={BUTTON_VARIANTS.PRIMARY}
-              type="submit"
-            >
-              submit
-            </Button>
+          <div className="self-center mt-2 md:mt-10 mb-5">
+            <Button type="submit">send</Button>
           </div>
         </div>
       </form>

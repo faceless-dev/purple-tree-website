@@ -1,5 +1,5 @@
-export enum BUTTON_VARIANTS {
-    PRIMARY = "primary",
-    SECONDARY = "secondary",
-    MOBILE = "mobile"
-  }
+export const ButtonVariants = {
+  PRIMARY: "PRIMARY",
+  SECONDARY: "SECONDARY",
+  MOBILE: "MOBILE",
+} as const;
