@@ -4,6 +4,7 @@ import classNames from "classnames";
 import { useEffect, useRef } from "react";
 import Hero from "./Hero";
 import Image from "next/image";
+import { Heading } from "./base/Heading";
 
 const ZOOM_BREAKPOINT = 13; // Do not touch, not yet figured out how to refactor
 const ZOOM_SPEED = 100; // Do not touch, not yet figured out how to refactor
@@ -17,6 +18,7 @@ const ZOOM_SPEED_FACTOR = 1.3; // decreases time until main content comes in vie
 const ScrollZoomContainer = ({ children }: { children: React.ReactNode }) => {
   const zoomRef = useRef<HTMLDivElement>(null);
   const arrowRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const afterZoomRef = useRef<HTMLDivElement>(null);
@@ -30,9 +32,10 @@ const ScrollZoomContainer = ({ children }: { children: React.ReactNode }) => {
         let temp = scroll / ZOOM_SPEED;
         let zoom = temp > 1 ? temp : 1;
 
-        if (imageRef.current && zoomRef.current && afterZoomRef.current && headerRef.current && arrowRef.current) {
+        if (imageRef.current && zoomRef.current && afterZoomRef.current && headerRef.current && arrowRef.current && headingRef.current) {
           if (zoom < ZOOM_BREAKPOINT) {
             const opacity = Math.max(1 - scroll / HERO_OPACITY_SCALING, 0.05);
+            const opacityHeading = Math.max(1 - (scroll / HERO_OPACITY_SCALING) * 1.2, 0);
 
             imageRef.current.style.transform = `scale(${zoom})`;
             zoomRef.current.style.top = "0px";
@@ -40,6 +43,8 @@ const ScrollZoomContainer = ({ children }: { children: React.ReactNode }) => {
 
             imageRef.current.style.opacity = opacity * 100 + "%";
             arrowRef.current.style.opacity = opacity * 100 + "%";
+            headingRef.current.style.opacity = opacityHeading * 100 + "%";
+
             headerRef.current.style.opacity = Math.min(scroll / HEADER_OPACITY_SCALING) * 100 + "%";
           }
         }
@@ -61,7 +66,10 @@ const ScrollZoomContainer = ({ children }: { children: React.ReactNode }) => {
     <>
       <div
         ref={headerRef}
-        className="top-4 left-5 fixed opacity-0 z-50 p-1 bg-black bg-opacity-90 rounded-xl"
+        className={classNames(
+          "top-5 left-0 fixed opacity-0 z-50 py-1 pr-4 pl-8 rounded-r-lg",
+          "bg-black bg-opacity-5 backdrop-blur-xl backdrop-filter"
+        )}
       >
         <Image
           src="/assets/logo.header.svg"
@@ -71,11 +79,19 @@ const ScrollZoomContainer = ({ children }: { children: React.ReactNode }) => {
         />
       </div>
 
+      <div className="fixed inset-0 z-20 bg-gradient-radial via-transparent from-transparent to-black-bg bg-opacity-75"></div>
+
       <div
         ref={zoomRef}
         className="h-[100vh] bg-black w-full flex flex-col items-center justify-center fixed top-0 left-0"
       >
         <Hero imageRef={imageRef} />
+        <div
+          className="mt-10"
+          ref={headingRef}
+        >
+          <Heading className="drop-shadow-[unset]">PURPLE TREE</Heading>
+        </div>
       </div>
 
       <div
