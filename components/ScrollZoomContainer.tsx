@@ -90,7 +90,7 @@ const ScrollZoomContainer = ({ children }: { children: React.ReactNode }) => {
           className="mt-10"
           ref={headingRef}
         >
-          <Heading className="drop-shadow-[unset]">PURPLE TREE</Heading>
+          <Heading className="!drop-shadow-[unset]">PURPLE TREE</Heading>
         </div>
       </div>
 
