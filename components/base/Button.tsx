@@ -3,7 +3,7 @@
 import classNames from "classnames";
 import React from "react";
 import { ButtonVariants } from "../../utils/enums";
-import { ButtonProps } from "../../utils/interfaces";
+import type { ButtonProps } from "../../utils/interfaces";
 import { scrollDown } from "../../utils/scrollDown";
 
 const Button = ({ variant = ButtonVariants.PRIMARY, scrollDownOnClick, onClick: onClickHandler, children, ...rest }: ButtonProps) => {
